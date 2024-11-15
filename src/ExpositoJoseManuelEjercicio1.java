@@ -144,8 +144,8 @@ public class ExpositoJoseManuelEjercicio1 {
                             }
                             System.out.println();
                         }
-
                         break;
+
                     case 1:
                         // Imprimir matriz
                         for (int i = 0; i < filas; i++) {

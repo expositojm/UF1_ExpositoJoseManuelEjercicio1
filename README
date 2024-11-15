@@ -1,4 +1,21 @@
 Bomber man
 
-El juego pide que introduzcamos dos numeros para formar una matriz de maximo 22 x 22
+#El juego pide que introduzcamos dos numeros para formar una matriz de maximo 22 x 22.
+
+#El usuario debe introducir numeros enteros validos de ese rango.
+
+#El programa muestra por pantalla la matriz generada con numeros aleatorios y de tamaño definido
+
+#El juego empieza mostrando al jugador las opcione:poner bomba,mostrar matriz,salir.
+
+    -Poner Bomba-> Pide al jugador las coordenadas donde quiere poner el artefacto dentro de la matriz.
+     Hace estallar la bomba mostrando por pantalla el valor de la explosion(suma de los valores contenidos en la fila y columna señalada)
+     La onda expansiva pone a cero la fila y columna donde se ha generado la explosion.
+     El juego muestra por pantalla la matriz antes y despues de la detonacion de coordenadas.
+
+    -Mostrar matriz->Imprime el estado actual de la matriz
+
+    -Salir->Termina el juego
+
+
 
