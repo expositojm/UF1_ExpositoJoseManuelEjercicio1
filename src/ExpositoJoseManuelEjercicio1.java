@@ -7,11 +7,12 @@ public class ExpositoJoseManuelEjercicio1 {
         Scanner input= new Scanner(System.in);
         final int RANGO = 22; //numero maximo del valor filas y columnas
         int filas ;
-        int columnas ;1
+        int columnas ;
         int low = 0;
         int high = 9;
         int opcion;
         int x, y;
+        int explosion = 0;
 
 
         System.out.println("___________________Bomber man___________________" + "Matriz_MAX:"+ RANGO+"x"+RANGO );
@@ -110,9 +111,39 @@ public class ExpositoJoseManuelEjercicio1 {
 
                         System.out.println("Valores introducidos: x = " + x + ", y = " + y);
 
+                        //Calcular la suma de la explosion
+                        for (int j = 0; j < matriz[x].length; j++) {
+                            explosion += matriz[x][j];
+                        }
+                        for (int i = 0; i < matriz.length; i++) {
+                            if (i != x) {
+                                explosion += matriz[i][y];
+                            }
+                        }
+                        //muestra la matriz junto con el valor de la explosion
+                        for (int i = 0; i < filas; i++) {
+                            for (int j = 0; j < columnas; j++) {
+                                System.out.print(matriz[i][j] + "\t");
+                            }
+                            System.out.println();
+                        }
+                        System.out.println("Valor explosion: "+ explosion);
 
-
-
+                        // Poner a cero la fila x
+                        for (int j = 0; j < matriz[x].length; j++) {
+                            matriz[x][j] = 0;
+                        }
+                        // Poner a cero la columna y
+                        for (int i = 0; i < matriz.length; i++) {
+                            matriz[i][y] = 0;
+                        }
+                        //muestra la matriz para mostrar valores a 0 podria omitirse
+                        for (int i = 0; i < filas; i++) {
+                            for (int j = 0; j < columnas; j++) {
+                                System.out.print(matriz[i][j] + "\t");
+                            }
+                            System.out.println();
+                        }
 
                         break;
                     case 1:
