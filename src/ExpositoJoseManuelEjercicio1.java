@@ -5,16 +5,16 @@ public class ExpositoJoseManuelEjercicio1 {
     public static void main(String[] args) {
 
         Scanner input= new Scanner(System.in);
-        final int RANGO = 22; //numero maximo del valor filas y columnas
-        int filas ;
-        int columnas ;
-        int low = 0;
-        int high = 9;
-        int opcion;
-        int x, y;
-        int explosion = 0;
+        final int RANGO = 22; //numero maximo del valor filas y columnas de la matriz
+        final int low = 0;  // limite por debajo del numero aleatorio para rellenar matriz
+        final int high = 9; // limite por arriba del numero aleatorio para rellenar matriz
+        int filas ; // numero filas solicitadas por el usuario para dimensionar matriz
+        int columnas ; // numero columnas solicitadas por el usuario para dimensionar matriz
+        int opcion; // almacena la opcion del menu elegida por el usuario
+        int x, y;   // coordenadas para posicionar la bomba dentro de la matriz
+        int explosion = 0; //valor de la explosion = suma valores de la fila + valores de la columna
 
-
+// Solicita tamaño de la matriz max 22x22 numeros entre 1 y 22
         System.out.println("___________________Bomber man___________________" + "Matriz_MAX:"+ RANGO+"x"+RANGO );
         do {
 
@@ -47,8 +47,8 @@ public class ExpositoJoseManuelEjercicio1 {
         } while (columnas <= 0 || filas > RANGO);
         System.out.println(filas);
         System.out.println(columnas);
+        Random r = new Random();
 
-         Random r = new Random();
         // Rellenar matriz con números aleatorios entre 0 y 9
         int[][] matriz = new int[filas][columnas];
         for (int i = 0; i < filas; i++) {
@@ -81,6 +81,7 @@ public class ExpositoJoseManuelEjercicio1 {
                 switch (opcion) {
                     case 2:
                         // ponerBomba
+                        //Solicita la coordenada x entre 0 y filas-1
                         do {
                             System.out.print("Introduce el valor de x (entre 0 y " +(filas-1)+ "): ");
                             while (!input.hasNextInt()) {
@@ -94,7 +95,7 @@ public class ExpositoJoseManuelEjercicio1 {
                                 System.out.println("Error: x debe estar entre 0 y " + (filas-1));
                             }
                         } while (x < 0 || x >= filas);
-
+                        //Solicita la coordenada y entre 0 y columnas-1
                         do {
                             System.out.print("Introduce el valor de y (entre 0 y " + (columnas-1)+ "): ");
                             while (!input.hasNextInt()) {
@@ -162,7 +163,7 @@ public class ExpositoJoseManuelEjercicio1 {
                         System.out.println("Elige una de las opciones del menu");
                 }
             } else {
-                // Si la entrada no es un número
+                // Avisa si  la entrada no es un número valido
                 System.out.println("Por favor, ingresa un número válido.");
                 input.next(); // Limpiar el buffer del scanner
                 opcion = -1; // Asignar un valor que no sea 0 para continuar el bucle
